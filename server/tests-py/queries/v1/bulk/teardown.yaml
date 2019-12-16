@@ -1,4 +1,0 @@
-type: run_sql
-args:
-  sql: |
-    drop table author
