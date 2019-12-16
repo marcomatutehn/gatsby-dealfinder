@@ -4,14 +4,15 @@ import { gql } from "apollo-boost";
 
 const GET_AUTHORS = gql`
   query {
-    author {
+    tbl_deal_content {
       id
-      name
+      article
+      price
     }
   }
 `;
 
-const AuthorList = () => {
+const DealFinder = () => {
   const { loading, error, data } = useQuery(GET_AUTHORS);
 
   if (loading) return "loading...";
@@ -19,14 +20,15 @@ const AuthorList = () => {
 
   return (
     <div>
-      {data.author.map((author, index) => (
+      {data.tbl_deal_content.map((tbl_deal_content, index) => (
         <div key={index}>
-          <h2>{author.name}</h2>
+          <h2>{tbl_deal_content.article}</h2>
+          <h2>{tbl_deal_content.price}</h2>
         </div>
       ))}
     </div>
   );
 };
 
-export default AuthorList;
+export default DealFinder;
 export { GET_AUTHORS };

@@ -78,7 +78,7 @@ GATSBY_HASURA_GRAPHQL_URL=https://my-app.herokuapp.com/v1/graphql npm run develo
 
 # Make a GraphQL query from your component using hooks
 
-1. Create a component named `AuthorList.js`:
+1. Create a component named `DealFinder.js`:
 
 ```js
 import React from "react";
@@ -94,7 +94,7 @@ const GET_AUTHORS = gql`
   }
 `;
 
-const AuthorList = () => {
+const DealFinder = () => {
   const { loading, error, data } = useQuery(GET_AUTHORS);
 
   if (loading) return "loading...";
@@ -111,7 +111,7 @@ const AuthorList = () => {
   );
 };
 
-export default AuthorList;
+export default DealFinder;
 export { GET_AUTHORS };
 ```
 
@@ -150,7 +150,7 @@ export const wrapRootElement = ({ element }) => (
 import React, { useState } from "react";
 import { useMutation } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
-import { GET_AUTHORS } from "./AuthorList";
+import { GET_AUTHORS } from DealFinder;
 
 const ADD_AUTHOR = gql`
   mutation insert_author($name: String!) {

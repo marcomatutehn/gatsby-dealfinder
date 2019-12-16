@@ -1,13 +1,11 @@
 import React from "react";
 
-import AddAuthor from "../components/AddAuthor";
-import AuthorList from "../components/AuthorList";
+import DealFinder from "../components/DealFinder";
 
 const Index = () => (
   <div>
-    <h1>My Authors</h1>
-    <AddAuthor />
-    <AuthorList />
+    <h1>Deal prices for Diunsa Honduras:</h1>
+    <DealFinder />
   </div>
 );
 
