@@ -19,34 +19,37 @@ const DealFinder = () => {
   if (loading) return "loading...";
   if (error) return `error: ${error.message}`;
 
-  let string2 = data.tbl_deal_content[0].price.trim( ).split(',')
+  console.log(data)
 
+  let diunsa = data.tbl_deal_content[0].price.trim( ).split(',')
+    console.log(diunsa)
   // Snipet of code for cleanup Data of the Web Scraper
-  for( let i = string2.length-1; i--;){
+  for( let i = diunsa.length; i--;){
     // First Cleanup Data
-    string2[i] =
-        string2[i].replace('"',"")
-                  .replace('L',"")
+    diunsa[i] =
+        diunsa[i].replace('"',"")
+                  .replace('L',"L.")
                   .replace('.00',"")
                   .replace('.',"")
                   .replace('{', "")
+                  .replace('}',"")
         // Second Cleanup of Data
-        string2[i].replace('"',"")
-        string2[i].replace('}',"")
-        string2[i].replace(' ',"")
+        diunsa[i].replace('"',"")
+        diunsa[i].replace('}',"")
+        diunsa[i].replace(' ',"")
   }
 
   // Array with the lowest prices from the request to GraphQL
   let deals = [];
-  deals.push(string2[0].replace('"',"").replace(/\s/g, ""))
-  deals.push(string2[1].replace('"',"").replace(/\s/g, ""))
-  deals.push(string2[2].replace('"',"").replace(/\s/g, ""))
-  deals.push(string2[3].replace('"',"").replace(/\s/g, ""))
-  deals.push(string2[4].replace('"',"").replace(/\s/g, ""))
-  deals.push(string2[5].replace('"',"").replace(/\s/g, ""))
-  deals.push(string2[6].replace('"',"").replace(/\s/g, ""))
-  deals.push(string2[7].replace('"',"").replace(/\s/g, ""))
-  deals.push(string2[8].replace('"',"").replace(/\s/g, ""))
+  deals.push(diunsa[0].replace('"',"").replace(/\s/g, ""))
+  deals.push(diunsa[1].replace('"',"").replace(/\s/g, ""))
+  deals.push(diunsa[2].replace('"',"").replace(/\s/g, ""))
+  deals.push(diunsa[3].replace('"',"").replace(/\s/g, ""))
+  deals.push(diunsa[4].replace('"',"").replace(/\s/g, ""))
+  deals.push(diunsa[5].replace('"',"").replace(/\s/g, ""))
+  deals.push(diunsa[6].replace('"',"").replace(/\s/g, ""))
+  deals.push(diunsa[7].replace('"',"").replace(/\s/g, ""))
+  deals.push(diunsa[8].replace('"',"").replace(/\s/g, ""))
 
 
 
@@ -57,14 +60,13 @@ const DealFinder = () => {
     for (var i = 0; i < len ; i++) {
       for(var j = 0 ; j < len - i - 1; j++){ // this was missing
         console.log("El valor de arr[j] es " + arr[j])
-        if (arr[j] > 100) {
           if (arr[j] > arr[j + 1]) {
             // swap
             var temp = arr[j];
             arr[j] = arr[j + 1];
             arr[j + 1] = temp;
           }
-        }
+
       }
     }
     return arr;
@@ -75,19 +77,8 @@ const DealFinder = () => {
   return (
 
     <div>
-      <h1>Data without processing</h1>
-      {string2}
-
-      <h2>The best deals: </h2>
-
-      <p>L. {deals[0]}00</p>
-      <p>L. {deals[1]}3000</p>
-      <p>L. {deals[2]}000</p>
-
-      <p>L. {deals[4].replace(/\s/g, "")}00</p>
-      <p>L. {deals[5]}00</p>
-
-
+      <h1>Deal Finder Diunsa Honduras</h1>
+      {diunsa}
 
     </div>
   );

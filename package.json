@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "develop": "gatsby develop",
+    "develop-hasura": "GATSBY_HASURA_GRAPHQL_URL=https://deal-finder-hn.herokuapp.com/v1/graphql npm run develop",
     "build": "gatsby build",
     "serve": "gatsby serve"
   },

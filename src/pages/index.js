@@ -4,7 +4,7 @@ import DealFinder from "../components/DealFinder";
 
 const Index = () => (
   <div>
-    <h1>Deal prices for Diunsa Honduras:</h1>
+    <h1>Deal Finder</h1>
     <DealFinder />
   </div>
 );
