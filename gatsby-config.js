@@ -35,5 +35,6 @@ module.exports = {
         appendScript: require.resolve(`./src/utils/sw.js`),
       },
     },
+    `gatsby-plugin-styled-components`,
   ]
 };
