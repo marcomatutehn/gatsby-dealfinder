@@ -6,7 +6,9 @@
     "develop": "gatsby develop",
     "develop-hasura": "GATSBY_HASURA_GRAPHQL_URL=https://deal-finder-hn.herokuapp.com/v1/graphql npm run develop",
     "build": "gatsby build",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "cy:open": "cypress open",
+    "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open"
   },
   "dependencies": {
     "@apollo/react-hooks": "^3.1.1",
@@ -32,6 +34,8 @@
     "zebras": "0.0.17"
   },
   "devDependencies": {
-    "dotenv": "^8.2.0"
+    "cypress": "^3.8.1",
+    "dotenv": "^8.2.0",
+    "start-server-and-test": "^1.10.6"
   }
 }
