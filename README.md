@@ -4,8 +4,11 @@ Deal Finder made with Gatsby, Heroku, Netlify, Scrapy for Scrape data, Hasura, G
 
 ![Gatsby Postgres GraphQL](./assets/deal-finder.png)
  
-##### Fronted: https://vibrant-kirch-538082.netlify.com
-##### Backend: https://github.com/marcomatutehn/deal_finder
+#### Deploy: https://vibrant-kirch-538082.netlify.com
 
+### Repositories
+
+##### Fronted: https://github.com/marcomatutehn/gatsby-dealfinder
+##### Backend: https://github.com/marcomatutehn/deal_finder
 #
 
