@@ -2,6 +2,25 @@ import React from "react";
 import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
 
+import styled from "styled-components"
+
+const Container = styled.div`
+  margin: 3rem auto;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`
+const Title = styled.div`
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+`
+
 const GET_AUTHORS = gql`
   query {
     tbl_deal_content (order_by: {id: desc}, limit: 1) {
@@ -12,7 +31,7 @@ const GET_AUTHORS = gql`
 `;
 
 
-const DealFinder = () => {
+const DealFinder = (props) => {
   // Handle the data of GraphQL
   const { loading, error, data } = useQuery(GET_AUTHORS);
 
@@ -77,9 +96,11 @@ const DealFinder = () => {
   return (
 
     <div>
-      <h1>Deal Finder Diunsa Honduras</h1>
-      {diunsa}
-
+      <Container>
+        <Title>{props.business_name}</Title>
+        <p>Televisions</p>
+        {diunsa}
+      </Container>
     </div>
   );
 };
