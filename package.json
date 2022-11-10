@@ -17,7 +17,7 @@
     "apollo-boost": "^0.4.4",
     "apollo-link-http": "^1.5.5",
     "babel-plugin-styled-components": "^1.10.6",
-    "gatsby": "^2.0.9",
+    "gatsby": "^5.0.1",
     "gatsby-link": "^2.0.2",
     "gatsby-plugin-manifest": "^2.2.33",
     "gatsby-plugin-offline": "^3.0.29",
